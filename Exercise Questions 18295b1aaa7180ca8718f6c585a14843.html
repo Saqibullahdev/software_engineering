@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Exercise Questions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="18295b1a-aa71-80ca-8718-f6c585a14843" class="page sans"><header><h1 class="page-title">Exercise Questions</h1><p class="page-description"></p></header><div class="page-body"><p id="18295b1a-aa71-800e-8036-ecfb0fb3c79b" class="">
+</p><hr id="18295b1a-aa71-802a-8274-c0f6018eee83"/><h3 id="18295b1a-aa71-80b9-a9e3-d79177653513" class=""><strong>Question 6.1: When describing a system, explain why you may have to design the system architecture before the requirements specification is complete.</strong></h3><p id="18295b1a-aa71-802e-ad2e-f0275eb62f67" class=""><strong>Answer:</strong><br/>Designing the system architecture before the requirements specification is complete is often necessary because:<br/></p><ol type="1" id="18295b1a-aa71-809f-bd23-fb81b3fb3de6" class="numbered-list" start="1"><li><strong>Early Understanding of Complexity</strong>: Architecture helps identify the major components and their interactions early on. This gives a clear picture of the system’s complexity, even if all details aren’t finalized.<ul id="18295b1a-aa71-807d-9f94-cd42d5a35a2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: If you’re building a house, you need to decide the layout (architecture) before deciding the color of the walls (details).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-804e-8aea-d4a4a6e3307f" class="numbered-list" start="2"><li><strong>Stakeholder Communication</strong>: A high-level architecture helps stakeholders (e.g., clients, managers) visualize the system and provide feedback early in the process.<ul id="18295b1a-aa71-80a3-bc0b-def41babbb45" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Showing a blueprint of a building helps clients understand the design before construction starts.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80a3-8cc4-d8e54b804dad" class="numbered-list" start="3"><li><strong>Risk Management</strong>: Early architecture design helps identify potential risks (e.g., scalability issues, integration challenges) before too much time and money are invested.<ul id="18295b1a-aa71-800b-b224-fc013f9e205a" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: If you’re building a bridge, you need to ensure the design can handle the expected load before building it.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-804e-9d7d-c38142e0bf8e" class="numbered-list" start="4"><li><strong>Iterative Development</strong>: In agile development, requirements often evolve. Having an architecture in place allows for incremental development and adaptation as requirements change.<ul id="18295b1a-aa71-80d6-ad5f-d17556417508" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Building a mobile app with a basic architecture allows you to add new features as user feedback comes in.</li></ul></li></ol><hr id="18295b1a-aa71-8097-bb22-edbe0283bd24"/><h3 id="18295b1a-aa71-800a-b8ba-ee090c8e5c6a" class=""><strong>Question 6.2: You have been asked to prepare and deliver a presentation to a non-technical manager to justify the hiring of a system architect for a new project. Write a list of bullet points setting out the key points in your presentation. Naturally, you have to explain what is meant by system architecture.</strong></h3><p id="18295b1a-aa71-8012-9145-e238c7b74786" class=""><strong>Answer:</strong><br/>Here’s a list of key points to justify hiring a system architect:<br/></p><ol type="1" id="18295b1a-aa71-80f2-9411-c5b396f52ea0" class="numbered-list" start="1"><li><strong>What is System Architecture?</strong><ul id="18295b1a-aa71-800e-a42f-f1e0ad35cc04" class="bulleted-list"><li style="list-style-type:disc">System architecture is the blueprint of the system. It defines how the system will be structured, including its components, relationships, and interactions.</li></ul><ul id="18295b1a-aa71-8068-84ec-ecef48aa4771" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Just like an architect designs a building’s structure, a system architect designs the structure of a software system.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8033-abca-d8bec56cfc65" class="numbered-list" start="2"><li><strong>Ensures Scalability</strong>:<ul id="18295b1a-aa71-80d9-959a-ef487477998d" class="bulleted-list"><li style="list-style-type:disc">A system architect ensures the system can grow and handle increased load over time.</li></ul><ul id="18295b1a-aa71-80d1-9f2d-c531764cb21a" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A well-architected e-commerce site can handle thousands of users during a sale.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8032-be84-fa7626f665cf" class="numbered-list" start="3"><li><strong>Improves Maintainability</strong>:<ul id="18295b1a-aa71-809d-95d4-f6c425895a75" class="bulleted-list"><li style="list-style-type:disc">A good architecture makes the system easier to maintain and update.</li></ul><ul id="18295b1a-aa71-80cf-a68f-c8aeabd8d531" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A modular architecture allows developers to fix bugs or add features without breaking the entire system.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8003-be0e-f02cc2c02089" class="numbered-list" start="4"><li><strong>Reduces Costs</strong>:<ul id="18295b1a-aa71-804b-896a-d9a46ee3c220" class="bulleted-list"><li style="list-style-type:disc">Proper architecture prevents costly redesigns and ensures efficient use of resources.</li></ul><ul id="18295b1a-aa71-8032-a28e-cb4e63e26130" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Building a house with a solid foundation avoids expensive repairs later.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-803d-87f8-d8db589d89a0" class="numbered-list" start="5"><li><strong>Ensures Security</strong>:<ul id="18295b1a-aa71-805d-94ea-ee7e2b232d89" class="bulleted-list"><li style="list-style-type:disc">A system architect designs the system with security in mind, protecting it from threats.</li></ul><ul id="18295b1a-aa71-80aa-9206-cfa8118d8b8c" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A secure architecture prevents hackers from accessing sensitive user data.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80ba-92d3-d8e50b11bf19" class="numbered-list" start="6"><li><strong>Facilitates Communication</strong>:<ul id="18295b1a-aa71-8089-ba81-c42beffd6274" class="bulleted-list"><li style="list-style-type:disc">The architect acts as a bridge between technical teams and non-technical stakeholders, ensuring everyone is on the same page.</li></ul><ul id="18295b1a-aa71-80df-aa7f-e2f0b0229185" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: The architect explains technical decisions to managers in simple terms.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80bf-a7ad-f10bf70b90a0" class="numbered-list" start="7"><li><strong>Supports Non-Functional Requirements</strong>:<ul id="18295b1a-aa71-8053-94de-e46242007838" class="bulleted-list"><li style="list-style-type:disc">The architect ensures the system meets performance, reliability, and usability goals.</li></ul><ul id="18295b1a-aa71-8086-be1e-caae9a9417ed" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A well-architected app loads quickly and doesn’t crash.</li></ul></li></ol><hr id="18295b1a-aa71-80e2-bf3c-ec86e93d4f1b"/><h3 id="18295b1a-aa71-80d5-b695-e74a302f36ee" class=""><strong>Question 6.3: Explain why design conflicts might arise when designing an architecture for which both availability and security requirements are the most important non-functional requirements.</strong></h3><p id="18295b1a-aa71-8022-af3f-e4d28ee79d99" class=""><strong>Answer:</strong><br/>Design conflicts arise between <br/><strong>availability</strong> (the system is always up and running) and <strong>security</strong> (the system is protected from threats) because:</p><ol type="1" id="18295b1a-aa71-8089-b918-f684226651e0" class="numbered-list" start="1"><li><strong>Security Measures Can Reduce Availability</strong>:<ul id="18295b1a-aa71-8077-8717-e0dd23db7405" class="bulleted-list"><li style="list-style-type:disc">Adding security layers (e.g., authentication, encryption) can slow down the system or cause downtime during updates.</li></ul><ul id="18295b1a-aa71-80ea-a63d-ead14ba2d474" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A bank’s website might go offline temporarily for security updates, reducing availability.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8022-8ea9-f84b9ff41455" class="numbered-list" start="2"><li><strong>High Availability Can Compromise Security</strong>:<ul id="18295b1a-aa71-80ab-80fb-c59517e66a67" class="bulleted-list"><li style="list-style-type:disc">To ensure the system is always available, you might skip security checks or updates, making the system vulnerable.</li></ul><ul id="18295b1a-aa71-8008-b30b-c1d479354b00" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A social media platform might delay security patches to avoid downtime, leaving it open to attacks.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8066-bed8-f6ff0bd0804a" class="numbered-list" start="3"><li><strong>Balancing Act</strong>:<ul id="18295b1a-aa71-80ba-875c-edf31e88a2e6" class="bulleted-list"><li style="list-style-type:disc">Achieving both high availability and high security requires careful planning and trade-offs.</li></ul><ul id="18295b1a-aa71-80e8-811e-e83bba818b5c" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A cloud service provider might use redundant servers for availability but implement strict access controls for security.</li></ul></li></ol><hr id="18295b1a-aa71-807c-8d5b-c7d5c6aef8b1"/><h3 id="18295b1a-aa71-809e-b251-cc36a8f0bedb" class=""><strong>Question 6.4: Draw diagrams showing a conceptual view and a process view of the architectures of the following systems:</strong></h3><p id="18295b1a-aa71-8049-819a-cbce52ae3587" class=""><strong>Answer:</strong><br/>Here’s a conceptual explanation of the architectures for the requested systems:<br/></p><h3 id="18295b1a-aa71-8073-85e7-d61fe314bbc6" class=""><strong>1. Automated Ticket-Issuing System</strong></h3><ul id="18295b1a-aa71-8099-a670-d7fd37a61b69" class="bulleted-list"><li style="list-style-type:disc"><strong>Conceptual View</strong>:<ul id="18295b1a-aa71-8029-a736-c4927599568c" class="bulleted-list"><li style="list-style-type:circle"><strong>Components</strong>: User interface, ticket database, payment system, printer.</li></ul><ul id="18295b1a-aa71-80ad-98b1-e499469262d2" class="bulleted-list"><li style="list-style-type:circle"><strong>Interactions</strong>: User selects destination → System checks availability → User pays → Ticket is printed.</li></ul><ul id="18295b1a-aa71-80f4-a456-d8ca08638eaa" class="bulleted-list"><li style="list-style-type:circle"><strong>Example</strong>: A vending machine where you select an item, pay, and receive the item.</li></ul></li></ul><ul id="18295b1a-aa71-8035-a4dc-eccb431946d7" class="bulleted-list"><li style="list-style-type:disc"><strong>Process View</strong>:<ul id="18295b1a-aa71-8090-a576-d5825d2db705" class="bulleted-list"><li style="list-style-type:circle"><strong>Steps</strong>:<ol type="1" id="18295b1a-aa71-8011-81c1-d1b5b6771be9" class="numbered-list" start="1"><li>User interacts with the interface.</li></ol><ol type="1" id="18295b1a-aa71-804c-b81c-d2892078bf91" class="numbered-list" start="2"><li>System queries the database for ticket availability.</li></ol><ol type="1" id="18295b1a-aa71-80e4-8e43-de95e4e6977c" class="numbered-list" start="3"><li>Payment is processed.</li></ol><ol type="1" id="18295b1a-aa71-8038-b1c4-e00f76398ab3" class="numbered-list" start="4"><li>Ticket is printed.</li></ol></li></ul></li></ul><h3 id="18295b1a-aa71-80fe-ab08-e8ec7663f317" class=""><strong>2. Video Conferencing System</strong></h3><ul id="18295b1a-aa71-80b0-bad5-ed2667cb5848" class="bulleted-list"><li style="list-style-type:disc"><strong>Conceptual View</strong>:<ul id="18295b1a-aa71-805f-b486-d32d3f01d3db" class="bulleted-list"><li style="list-style-type:circle"><strong>Components</strong>: Cameras, microphones, displays, network, server.</li></ul><ul id="18295b1a-aa71-8016-8824-dbd211d42980" class="bulleted-list"><li style="list-style-type:circle"><strong>Interactions</strong>: Participants join the meeting → Video/audio/data are captured → Sent to the server → Broadcast to all participants.</li></ul><ul id="18295b1a-aa71-802a-9c95-c5e9732194bc" class="bulleted-list"><li style="list-style-type:circle"><strong>Example</strong>: A virtual classroom where the teacher’s video and audio are shared with students.</li></ul></li></ul><ul id="18295b1a-aa71-8008-ad86-d5296e63fb20" class="bulleted-list"><li style="list-style-type:disc"><strong>Process View</strong>:<ul id="18295b1a-aa71-80bb-b052-c58478ea15b4" class="bulleted-list"><li style="list-style-type:circle"><strong>Steps</strong>:<ol type="1" id="18295b1a-aa71-807c-81cf-d8fcf4fa37b4" class="numbered-list" start="1"><li>Participants connect to the system.</li></ol><ol type="1" id="18295b1a-aa71-809f-87ad-f71715ddac55" class="numbered-list" start="2"><li>Video/audio/data are captured and sent to the server.</li></ol><ol type="1" id="18295b1a-aa71-801b-b46d-d73e095b7200" class="numbered-list" start="3"><li>Server broadcasts the data to all participants.</li></ol><ol type="1" id="18295b1a-aa71-8019-a907-e892ccec32ee" class="numbered-list" start="4"><li>Participants see and hear each other in real-time.</li></ol></li></ul></li></ul><h3 id="18295b1a-aa71-8013-93e7-ef4158398100" class=""><strong>3. Robot Floor Cleaner</strong></h3><ul id="18295b1a-aa71-8038-9d34-ce67596cd372" class="bulleted-list"><li style="list-style-type:disc"><strong>Conceptual View</strong>:<ul id="18295b1a-aa71-8014-ab5d-d0733013103d" class="bulleted-list"><li style="list-style-type:circle"><strong>Components</strong>: Sensors (for walls/obstructions), cleaning mechanism, navigation system, battery.</li></ul><ul id="18295b1a-aa71-800d-8d3e-cc8691a22e36" class="bulleted-list"><li style="list-style-type:circle"><strong>Interactions</strong>: Robot senses walls → Moves around obstacles → Cleans the floor → Returns to charging station.</li></ul><ul id="18295b1a-aa71-80c0-b998-f4514cfbeda0" class="bulleted-list"><li style="list-style-type:circle"><strong>Example</strong>: A Roomba vacuum cleaner that navigates around furniture.</li></ul></li></ul><ul id="18295b1a-aa71-801a-9bce-daf7c27d11c9" class="bulleted-list"><li style="list-style-type:disc"><strong>Process View</strong>:<ul id="18295b1a-aa71-804f-948c-cc030b56a23d" class="bulleted-list"><li style="list-style-type:circle"><strong>Steps</strong>:<ol type="1" id="18295b1a-aa71-8054-9e96-e69422f07488" class="numbered-list" start="1"><li>Robot starts cleaning.</li></ol><ol type="1" id="18295b1a-aa71-8014-8485-e0a2a33228be" class="numbered-list" start="2"><li>Sensors detect walls and obstacles.</li></ol><ol type="1" id="18295b1a-aa71-80a1-8097-c7b70637bf1f" class="numbered-list" start="3"><li>Navigation system plans a path.</li></ol><ol type="1" id="18295b1a-aa71-809e-8e6c-d7143ed38a92" class="numbered-list" start="4"><li>Cleaning mechanism operates while avoiding obstacles.</li></ol><ol type="1" id="18295b1a-aa71-808f-89c8-cc59b5ead1ed" class="numbered-list" start="5"><li>Robot returns to the charging station when done.</li></ol></li></ul></li></ul><hr id="18295b1a-aa71-80f2-82fc-f6c3c963b5ab"/><h3 id="18295b1a-aa71-800c-9ca0-ea93e818f268" class=""><strong>Key Takeaways</strong></h3><ol type="1" id="18295b1a-aa71-8045-9cab-f21e54ee27a5" class="numbered-list" start="1"><li><strong>Architecture before requirements</strong>: Helps manage complexity, communicate with stakeholders, and reduce risks.</li></ol><ol type="1" id="18295b1a-aa71-8009-a3fd-f10a9c209290" class="numbered-list" start="2"><li><strong>Hiring a system architect</strong>: Ensures scalability, maintainability, security, and cost-effectiveness.</li></ol><ol type="1" id="18295b1a-aa71-801d-9fd0-e07da8cbf52f" class="numbered-list" start="3"><li><strong>Availability vs. security</strong>: Balancing both requires trade-offs and careful planning.</li></ol><ol type="1" id="18295b1a-aa71-8089-8756-d445e67a2d25" class="numbered-list" start="4"><li><strong>System architectures</strong>: Can be visualized conceptually (components and interactions) and process-wise (steps and workflows).</li></ol><p id="18295b1a-aa71-80b4-babf-e0ba4e76adc0" class="">Let me know if you need further clarification! 😊</p><hr id="18295b1a-aa71-8067-a734-cddc3396ecd6"/><h3 id="18295b1a-aa71-807b-a695-d1ef1a32e6ee" class=""><strong>Question 6.5: Why use several architectural patterns in large systems? What additional information is useful?</strong></h3><p id="18295b1a-aa71-803d-a6ae-de2430821a2e" class=""><strong>Answer:</strong></p><ol type="1" id="18295b1a-aa71-8029-a350-cdc7a878d075" class="numbered-list" start="1"><li><strong>Why Use Multiple Patterns?</strong><ul id="18295b1a-aa71-801a-8a68-de664a4ca714" class="bulleted-list"><li style="list-style-type:disc"><strong>Complexity of Large Systems</strong>: Large systems often have multiple subsystems with different requirements. A single pattern may not address all needs.<ul id="18295b1a-aa71-80ad-82a3-da8807703274" class="bulleted-list"><li style="list-style-type:circle"><strong>Example</strong>: A banking system might use:<ul id="18295b1a-aa71-80cd-9b19-cefad4ae470b" class="bulleted-list"><li style="list-style-type:square"><strong>Layered Architecture</strong> for separating UI, business logic, and database.</li></ul><ul id="18295b1a-aa71-8043-9ffd-cb77b998e23a" class="bulleted-list"><li style="list-style-type:square"><strong>Client-Server Architecture</strong> for handling user requests.</li></ul><ul id="18295b1a-aa71-802c-9127-e0ab35ba6050" class="bulleted-list"><li style="list-style-type:square"><strong>Repository Architecture</strong> for managing customer data.</li></ul></li></ul></li></ul><ul id="18295b1a-aa71-802a-80d2-ec91d4667bdd" class="bulleted-list"><li style="list-style-type:disc"><strong>Flexibility</strong>: Different patterns provide flexibility to handle various aspects like scalability, security, and performance.<ul id="18295b1a-aa71-807c-88d7-c9a263887043" class="bulleted-list"><li style="list-style-type:circle"><strong>Example</strong>: A social media app might use <strong>MVC</strong> for the frontend and <strong>Microservices</strong> for backend scalability.</li></ul></li></ul><ul id="18295b1a-aa71-806d-b91f-e33fab20b35d" class="bulleted-list"><li style="list-style-type:disc"><strong>Reusability</strong>: Patterns allow reuse of proven solutions for common problems.<ul id="18295b1a-aa71-80a5-8992-ccb63fa3da39" class="bulleted-list"><li style="list-style-type:circle"><strong>Example</strong>: Using <strong>Repository Pattern</strong> for data access across multiple modules.</li></ul></li></ul></li></ol><ol type="1" id="18295b1a-aa71-8079-b45a-ee66efbf2888" class="numbered-list" start="2"><li><strong>Additional Information for Designing Large Systems</strong>:<ul id="18295b1a-aa71-807f-9b28-e6194d23b31b" class="bulleted-list"><li style="list-style-type:disc"><strong>Non-Functional Requirements</strong>: Performance, security, scalability, and availability.</li></ul><ul id="18295b1a-aa71-80b3-9482-d041ae2a5542" class="bulleted-list"><li style="list-style-type:disc"><strong>Stakeholder Needs</strong>: Understanding what users, managers, and developers need.</li></ul><ul id="18295b1a-aa71-80f2-9496-c9760fff81e0" class="bulleted-list"><li style="list-style-type:disc"><strong>Technology Stack</strong>: Choosing the right tools, frameworks, and platforms.</li></ul><ul id="18295b1a-aa71-80dd-add4-ec7ea4a80aef" class="bulleted-list"><li style="list-style-type:disc"><strong>Integration Requirements</strong>: How the system will interact with other systems.</li></ul><ul id="18295b1a-aa71-8031-90bd-f31ad41cdf4e" class="bulleted-list"><li style="list-style-type:disc"><strong>Regulatory Compliance</strong>: Ensuring the system meets legal and industry standards.</li></ul><ul id="18295b1a-aa71-8089-a190-d4be8c55deb0" class="bulleted-list"><li style="list-style-type:disc"><strong>Cost and Time Constraints</strong>: Balancing quality with budget and deadlines.</li></ul></li></ol><hr id="18295b1a-aa71-8083-92c5-d97593fed610"/><h3 id="18295b1a-aa71-80a5-9e4a-d00d684b8c81" class=""><strong>Question 6.6: Suggest an architecture for a music distribution system like iTunes.</strong></h3><p id="18295b1a-aa71-8062-8368-e37d1e00f044" class=""><strong>Answer:Architecture for a Music Distribution System</strong>:</p><ol type="1" id="18295b1a-aa71-8099-bd62-d4a6203a126b" class="numbered-list" start="1"><li><strong>Layered Architecture</strong>:<ul id="18295b1a-aa71-8064-9a01-ccbfbc2514a2" class="bulleted-list"><li style="list-style-type:disc"><strong>Presentation Layer</strong>: User interface for browsing, purchasing, and playing music.</li></ul><ul id="18295b1a-aa71-8045-b12c-e470e97e085f" class="bulleted-list"><li style="list-style-type:disc"><strong>Application Layer</strong>: Handles business logic like user authentication, payment processing, and music recommendations.</li></ul><ul id="18295b1a-aa71-808a-abea-cec7c96c89a1" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Layer</strong>: Stores music files, user data, and transaction records.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80d9-9fcd-d547474912aa" class="numbered-list" start="2"><li><strong>Client-Server Architecture</strong>:<ul id="18295b1a-aa71-8059-ba3a-edd3ff4e6b2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Client</strong>: The iTunes app or web interface used by customers.</li></ul><ul id="18295b1a-aa71-80e8-b675-cf53681429d7" class="bulleted-list"><li style="list-style-type:disc"><strong>Server</strong>: Backend servers that handle requests, process payments, and stream music.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-800f-bc1f-c49ed9201593" class="numbered-list" start="3"><li><strong>Repository Architecture</strong>:<ul id="18295b1a-aa71-80e6-9c87-db22ed7ed2b0" class="bulleted-list"><li style="list-style-type:disc">A central database stores all music files, user profiles, and purchase history.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-808e-af26-fc95c81843c8" class="numbered-list" start="4"><li><strong>Microservices Architecture</strong>:<ul id="18295b1a-aa71-8069-b555-cbea8262b92d" class="bulleted-list"><li style="list-style-type:disc">Different services handle specific tasks:<ul id="18295b1a-aa71-807b-902b-d3af291bfa41" class="bulleted-list"><li style="list-style-type:circle"><strong>User Service</strong>: Manages user accounts.</li></ul><ul id="18295b1a-aa71-8058-8767-c7ce988ae4ef" class="bulleted-list"><li style="list-style-type:circle"><strong>Payment Service</strong>: Processes transactions.</li></ul><ul id="18295b1a-aa71-800a-a992-c38ff7a973e4" class="bulleted-list"><li style="list-style-type:circle"><strong>Music Service</strong>: Handles music storage and streaming.</li></ul></li></ul></li></ol><p id="18295b1a-aa71-8010-bda2-c44efa40fdd9" class=""><strong>Architectural Patterns</strong>:</p><ul id="18295b1a-aa71-8032-a044-c719ce85e798" class="bulleted-list"><li style="list-style-type:disc"><strong>Layered Pattern</strong>: For separating concerns (UI, logic, data).</li></ul><ul id="18295b1a-aa71-8002-99ca-e2baa4820221" class="bulleted-list"><li style="list-style-type:disc"><strong>Client-Server Pattern</strong>: For handling user requests and server responses.</li></ul><ul id="18295b1a-aa71-80dc-9de2-d63403193715" class="bulleted-list"><li style="list-style-type:disc"><strong>Repository Pattern</strong>: For centralized data storage.</li></ul><ul id="18295b1a-aa71-8015-9063-cf6886ce7349" class="bulleted-list"><li style="list-style-type:disc"><strong>Microservices Pattern</strong>: For scalability and flexibility.</li></ul><p id="18295b1a-aa71-80b2-8f86-ee2960d5e92c" class="">answer2:</p><p id="18295b1a-aa71-8012-9178-d4e7a073f744" class=""><strong>Answer:</strong><br/>For a system like iTunes, the following architecture and patterns can be used:<br/></p><ol type="1" id="18295b1a-aa71-806f-a547-dffb825245ed" class="numbered-list" start="1"><li><strong>Architecture:</strong><ul id="18295b1a-aa71-80b0-98e4-d78b724d1ee5" class="bulleted-list"><li style="list-style-type:disc"><strong>Client-Server Architecture:</strong> To allow users to interact with the system via mobile apps or web clients.</li></ul><ul id="18295b1a-aa71-8021-b46b-e811f8d3b8da" class="bulleted-list"><li style="list-style-type:disc"><strong>Microservices Architecture:</strong> Each service (e.g., user authentication, music catalog, payments) is independently deployable and scalable.</li></ul><ul id="18295b1a-aa71-80ac-9507-c7cd6a5e69c1" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Streaming:</strong> For music previews or live streams.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8094-8783-ceeda9b76e4d" class="numbered-list" start="2"><li><strong>Patterns Used:</strong><ul id="18295b1a-aa71-804d-9642-f999c94eccce" class="bulleted-list"><li style="list-style-type:disc"><strong>Repository Pattern:</strong> To manage music files and metadata in a database.</li></ul><ul id="18295b1a-aa71-80f1-aa65-ff10d0babef4" class="bulleted-list"><li style="list-style-type:disc"><strong>Event-Driven Pattern:</strong> For notifications (e.g., new releases or payment confirmations).</li></ul><ul id="18295b1a-aa71-8074-a7ba-fa620e3f06e3" class="bulleted-list"><li style="list-style-type:disc"><strong>RESTful APIs:</strong> To allow seamless communication between the client and server.</li></ul></li></ol><hr id="18295b1a-aa71-80e0-af22-e96db0e5af11"/><h3 id="18295b1a-aa71-8033-9dc9-e8a890a4d6c3" class=""><strong>Question 6.7: How to use the reference model of CASE environments to compare IDEs?</strong></h3><p id="18295b1a-aa71-80cd-bd63-fe3421b367b4" class=""><strong>Answer:</strong></p><ol type="1" id="18295b1a-aa71-8007-82e0-e2c2488020ca" class="numbered-list" start="1"><li><strong>Reference Model of CASE Environments</strong>:<ul id="18295b1a-aa71-80c1-9a49-eff25beae61c" class="bulleted-list"><li style="list-style-type:disc">A framework that defines the components and functionalities of a CASE (Computer-Aided Software Engineering) tool or IDE (Integrated Development Environment).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80b1-86e4-f4e109e34f65" class="numbered-list" start="2"><li><strong>Steps to Compare IDEs</strong>:<ul id="18295b1a-aa71-8034-87bf-d6afa2b27038" class="bulleted-list"><li style="list-style-type:disc"><strong>Identify Key Components</strong>:<ul id="18295b1a-aa71-8072-a237-e81fdeac0e4a" class="bulleted-list"><li style="list-style-type:circle"><strong>Code Editor</strong>: Syntax highlighting, auto-completion.</li></ul><ul id="18295b1a-aa71-805e-a41a-eeec7557b569" class="bulleted-list"><li style="list-style-type:circle"><strong>Debugger</strong>: Breakpoints, step-through execution.</li></ul><ul id="18295b1a-aa71-8041-be44-c130997fcfbc" class="bulleted-list"><li style="list-style-type:circle"><strong>Version Control Integration</strong>: Git, SVN support.</li></ul><ul id="18295b1a-aa71-808b-adaf-c53d7558765b" class="bulleted-list"><li style="list-style-type:circle"><strong>Build Tools</strong>: Compilation, packaging.</li></ul><ul id="18295b1a-aa71-80ab-bfd0-d8bea08b5bb4" class="bulleted-list"><li style="list-style-type:circle"><strong>Plugins/Extensions</strong>: Customizability.</li></ul></li></ul><ul id="18295b1a-aa71-80a4-af98-ccde4144b01c" class="bulleted-list"><li style="list-style-type:disc"><strong>Evaluate Each Component</strong>:<ul id="18295b1a-aa71-80d6-b12b-de7cd480c3f3" class="bulleted-list"><li style="list-style-type:circle">Compare how well each IDE performs in these areas.</li></ul></li></ul><ul id="18295b1a-aa71-8056-9b7c-eb42e75436a6" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>:<ul id="18295b1a-aa71-8064-a29e-f6c2baab5331" class="bulleted-list"><li style="list-style-type:circle"><strong>Eclipse</strong>: Strong plugin ecosystem but can be slow.</li></ul><ul id="18295b1a-aa71-80cf-bbe1-fd1adebf44f7" class="bulleted-list"><li style="list-style-type:circle"><strong>IntelliJ IDEA</strong>: Excellent code analysis but expensive.</li></ul><ul id="18295b1a-aa71-80dd-ada9-c2b485c907b8" class="bulleted-list"><li style="list-style-type:circle"><strong>VS Code</strong>: Lightweight and highly customizable.</li></ul></li></ul></li></ol><hr id="18295b1a-aa71-8081-8846-e2177c92d323"/><h3 id="18295b1a-aa71-8017-ad7a-f7f71beba41f" class=""><strong>Question 6.8: Design a system that translates natural language commands into SQL queries.</strong></h3><p id="18295b1a-aa71-809a-bd09-d474689ab248" class=""><strong>Answer:Architecture for a Natural Language to SQL System</strong>:</p><ol type="1" id="18295b1a-aa71-8075-8e8d-c6913dce4a11" class="numbered-list" start="1"><li><strong>Input Module</strong>:<ul id="18295b1a-aa71-8061-bd40-c06b1d9d0695" class="bulleted-list"><li style="list-style-type:disc">Accepts natural language commands (e.g., &quot;Show all customers from New York&quot;).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80c6-aa6d-d708ad14955a" class="numbered-list" start="2"><li><strong>Lexical Analyzer</strong>:<ul id="18295b1a-aa71-8029-92c9-c92b797caa4e" class="bulleted-list"><li style="list-style-type:disc">Breaks the input into tokens (e.g., &quot;Show&quot;, &quot;customers&quot;, &quot;New York&quot;).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-801d-8b1e-c3aae632c710" class="numbered-list" start="3"><li><strong>Syntax Analyzer</strong>:<ul id="18295b1a-aa71-8091-ace0-f154534e4cf9" class="bulleted-list"><li style="list-style-type:disc">Checks the structure of the command (e.g., verb-object-location).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80f0-bf8d-c9b1df3ea210" class="numbered-list" start="4"><li><strong>Semantic Analyzer</strong>:<ul id="18295b1a-aa71-80b4-ab38-df015720c2c2" class="bulleted-list"><li style="list-style-type:disc">Maps tokens to database concepts (e.g., &quot;customers&quot; → <code>Customers</code> table, &quot;New York&quot; → <code>city = &#x27;New York&#x27;</code>).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80bf-ad6c-e6831f09c4f5" class="numbered-list" start="5"><li><strong>Query Generator</strong>:<ul id="18295b1a-aa71-80bf-bd8a-d13a01d9c84d" class="bulleted-list"><li style="list-style-type:disc">Converts the analyzed command into an SQL query (e.g., <code>SELECT * FROM Customers WHERE city = &#x27;New York&#x27;</code>).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-806f-af3c-f6abd06d1101" class="numbered-list" start="6"><li><strong>Database Interface</strong>:<ul id="18295b1a-aa71-80d9-9644-fc4f1b6bbbca" class="bulleted-list"><li style="list-style-type:disc">Executes the SQL query and returns results.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-802a-a93d-f5e5a3d46a97" class="numbered-list" start="7"><li><strong>Output Module</strong>:<ul id="18295b1a-aa71-806d-b8d8-f655e2c1557e" class="bulleted-list"><li style="list-style-type:disc">Displays the results to the user.</li></ul></li></ol><p id="18295b1a-aa71-8092-b214-c167d4a6ab3e" class=""><strong>Example</strong>:</p><ul id="18295b1a-aa71-801e-b838-fa01ed53e7a6" class="bulleted-list"><li style="list-style-type:disc">Input: &quot;Show all orders above $100.&quot;</li></ul><ul id="18295b1a-aa71-8076-b78f-df01381c6f74" class="bulleted-list"><li style="list-style-type:disc">Output SQL: <code>SELECT * FROM Orders WHERE amount &gt; 100</code>.</li></ul><hr id="18295b1a-aa71-8040-858a-f2834fdd11af"/><h3 id="18295b1a-aa71-80c1-8fa9-d55364334ecf" class=""><strong>Question 6.9: Components of an airport flight information system.</strong></h3><p id="18295b1a-aa71-8066-b505-ed49889dcc97" class=""><strong>Answer:Components of an Airport Flight Information System</strong>:</p><ol type="1" id="18295b1a-aa71-80f6-989d-f412036cf114" class="numbered-list" start="1"><li><strong>User Interface</strong>:<ul id="18295b1a-aa71-80e1-af6d-fe7d0e3f8783" class="bulleted-list"><li style="list-style-type:disc">Displays flight information (arrivals, departures, delays).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80f0-a90f-d2ba478df95c" class="numbered-list" start="2"><li><strong>Flight Data Manager</strong>:<ul id="18295b1a-aa71-80a9-8b51-ffdbc954eb2a" class="bulleted-list"><li style="list-style-type:disc">Fetches and updates flight data from airlines.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80b8-aacd-cf2cc0532e36" class="numbered-list" start="3"><li><strong>Database</strong>:<ul id="18295b1a-aa71-80dd-9508-fa629bd03061" class="bulleted-list"><li style="list-style-type:disc">Stores flight schedules, status, and airport information.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8043-ad0f-def818c0bc19" class="numbered-list" start="4"><li><strong>Notification System</strong>:<ul id="18295b1a-aa71-805c-a01f-fa58058c4b90" class="bulleted-list"><li style="list-style-type:disc">Sends alerts for delays or cancellations.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8049-b9ff-fef79b344f03" class="numbered-list" start="5"><li><strong>Integration Layer</strong>:<ul id="18295b1a-aa71-80b1-802f-ec79c05edd69" class="bulleted-list"><li style="list-style-type:disc">Connects with external systems (e.g., airline APIs, weather services).</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8009-9887-ed6ac80e6611" class="numbered-list" start="6"><li><strong>Security Module</strong>:<ul id="18295b1a-aa71-80dc-811d-f859d9aeddd3" class="bulleted-list"><li style="list-style-type:disc">Ensures data privacy and system security.</li></ul></li></ol><p id="18295b1a-aa71-8013-9e1e-d79a115fad5a" class=""><strong>Example</strong>:</p><ul id="18295b1a-aa71-80ee-92b1-dc94fac1f31b" class="bulleted-list"><li style="list-style-type:disc">A passenger checks the system to see if their flight is on time. The system fetches data from the database and displays it on the UI.</li></ul><hr id="18295b1a-aa71-807e-896e-c0c7f80006b3"/><h3 id="18295b1a-aa71-80d5-986e-ccb5e23eb280" class=""><strong>Question 6.10: Should there be a separate profession of &#x27;software architect&#x27;?</strong></h3><p id="18295b1a-aa71-8016-b430-eaa90fcb4fd6" class=""><strong>Answer:Arguments for a Separate Profession</strong>:</p><ol type="1" id="18295b1a-aa71-80d5-a7b7-da6120508a2c" class="numbered-list" start="1"><li><strong>Specialization</strong>:<ul id="18295b1a-aa71-8089-bd85-fd2837faac5a" class="bulleted-list"><li style="list-style-type:disc">Software architects focus on high-level design, leaving implementation to developers.</li></ul><ul id="18295b1a-aa71-8012-8342-f68d1d6fc91b" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Just like building architects design structures, software architects design systems.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80c9-a365-db068b3c29de" class="numbered-list" start="2"><li><strong>Quality Assurance</strong>:<ul id="18295b1a-aa71-8090-ab7b-c1842d7e4d6a" class="bulleted-list"><li style="list-style-type:disc">Ensures the system meets non-functional requirements (e.g., scalability, security).</li></ul><ul id="18295b1a-aa71-8027-a9ab-e713be1842c5" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: An architect ensures a banking app can handle millions of users securely.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8054-8c6e-cd5269282e17" class="numbered-list" start="3"><li><strong>Stakeholder Communication</strong>:<ul id="18295b1a-aa71-8053-989c-e35c454a1aca" class="bulleted-list"><li style="list-style-type:disc">Acts as a bridge between technical teams and non-technical stakeholders.</li></ul><ul id="18295b1a-aa71-809b-90b4-ea6f347abbbe" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Explains technical decisions to managers in simple terms.</li></ul></li></ol><p id="18295b1a-aa71-804f-ab2a-d73f293ff58a" class=""><strong>Difficulties</strong>:</p><ol type="1" id="18295b1a-aa71-8008-bb51-d8dc8d68a3b2" class="numbered-list" start="1"><li><strong>Coordination Issues</strong>:<ul id="18295b1a-aa71-802d-9c2a-d7b341b2542e" class="bulleted-list"><li style="list-style-type:disc">Architects and developers may have conflicting visions.</li></ul><ul id="18295b1a-aa71-80bd-a701-d4c40dc91f60" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Developers might find the architect’s design too rigid or impractical.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-802f-b28e-fa014569e6ef" class="numbered-list" start="2"><li><strong>Cost</strong>:<ul id="18295b1a-aa71-80c3-baab-f8b9972eef02" class="bulleted-list"><li style="list-style-type:disc">Hiring a separate architect increases project costs.</li></ul><ul id="18295b1a-aa71-80fd-85eb-cc176072db10" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: Small startups may not afford a dedicated architect.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8055-b003-c2b822184d9d" class="numbered-list" start="3"><li><strong>Implementation Gap</strong>:<ul id="18295b1a-aa71-803a-84fa-c98e130069d3" class="bulleted-list"><li style="list-style-type:disc">Architects may design systems without considering implementation challenges.</li></ul><ul id="18295b1a-aa71-8066-ae71-f4b7353b9ec0" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A beautiful design might be too complex to build.</li></ul></li></ol><hr id="18295b1a-aa71-8060-8a7b-cb804c174daa"/><h3 id="18295b1a-aa71-80f6-9bbc-c4e77ab02afb" class=""><strong>Key Takeaways</strong></h3><ol type="1" id="18295b1a-aa71-8026-a690-e059af1de600" class="numbered-list" start="1"><li><strong>Multiple Patterns</strong>: Large systems need multiple architectural patterns to handle complexity and flexibility.</li></ol><ol type="1" id="18295b1a-aa71-80d9-9bf1-ce259bc737f2" class="numbered-list" start="2"><li><strong>Music System Architecture</strong>: Layered, Client-Server, Repository, and Microservices patterns.</li></ol><ol type="1" id="18295b1a-aa71-803b-9361-fb5495878afd" class="numbered-list" start="3"><li><strong>IDE Comparison</strong>: Use a reference model to evaluate code editors, debuggers, and plugins.</li></ol><ol type="1" id="18295b1a-aa71-809c-944a-efd0492b8268" class="numbered-list" start="4"><li><strong>Natural Language to SQL</strong>: Input → Lexical → Syntax → Semantic → Query → Database → Output.</li></ol><ol type="1" id="18295b1a-aa71-801b-9d41-f0cc831a8716" class="numbered-list" start="5"><li><strong>Flight Information System</strong>: UI, Data Manager, Database, Notifications, Integration, Security.</li></ol><ol type="1" id="18295b1a-aa71-809f-a6cd-ce44ecb0b993" class="numbered-list" start="6"><li><strong>Software Architect Profession</strong>: Specialization improves design quality but may lead to coordination and cost issues.</li></ol><p id="18295b1a-aa71-80f7-8580-ff7bf53b341b" class="">Let me know if you need further clarification! 😊</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

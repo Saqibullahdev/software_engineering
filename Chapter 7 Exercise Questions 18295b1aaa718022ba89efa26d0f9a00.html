@@ -1,0 +1,767 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Chapter 7 Exercise Questions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="18295b1a-aa71-8022-ba89-efa26d0f9a00" class="page sans"><header><h1 class="page-title">Chapter 7 Exercise Questions</h1><p class="page-description"></p></header><div class="page-body"><p id="18295b1a-aa71-808b-bb43-effb19054689" class="">Let’s solve each of the exercises step by step:</p><hr id="18295b1a-aa71-8057-bad6-d4ff1b6a004c"/><h3 id="18295b1a-aa71-8014-8125-e8b7f8d14152" class=""><strong>Exercise 7.1: Weather Station Use Cases</strong></h3><p id="18295b1a-aa71-803d-865a-e69a8aee5e99" class="">Using the structured notation, specify the use cases for <strong>Report Status</strong> and <strong>Reconfigure</strong> for a weather station. Make reasonable assumptions about the functionality.</p><h3 id="18295b1a-aa71-8028-a7ec-c355e8626220" class=""><strong>Use Case 1: Report Status</strong></h3><ul id="18295b1a-aa71-8084-8337-dc4be4e50b67" class="bulleted-list"><li style="list-style-type:disc"><strong>Use Case Name</strong>: Report Status</li></ul><ul id="18295b1a-aa71-8019-abcd-ccd6df3c75bb" class="bulleted-list"><li style="list-style-type:disc"><strong>Actors</strong>: Control System, Weather Station</li></ul><ul id="18295b1a-aa71-8073-9483-f733628c60f0" class="bulleted-list"><li style="list-style-type:disc"><strong>Description</strong>: The control system requests the current status of the weather station, including the operational state of its instruments.</li></ul><ul id="18295b1a-aa71-80bc-9c08-c0e8be1751e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Stimulus</strong>: The control system sends a status request to the weather station.</li></ul><ul id="18295b1a-aa71-8058-870c-c3e8d3ba5223" class="bulleted-list"><li style="list-style-type:disc"><strong>Response</strong>: The weather station sends back a status report, including information such as instrument health, battery level, and communication status.</li></ul><p id="18295b1a-aa71-80ba-8a09-cd59d091fc6f" class=""><strong>Structured Notation</strong>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-80c4-8970-ccdf2cce3334" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Use Case: Report Status
+Actors: Control System, Weather Station
+Description: The control system requests the current status of the weather station.
+Stimulus: Control system sends a status request.
+Response: Weather station sends a status report.
+</code></pre><hr id="18295b1a-aa71-8015-97ab-e52e0c88916b"/><h3 id="18295b1a-aa71-8039-876e-d0c7a87b903b" class=""><strong>Use Case 2: Reconfigure</strong></h3><ul id="18295b1a-aa71-80d7-aa3b-dccd19eae59a" class="bulleted-list"><li style="list-style-type:disc"><strong>Use Case Name</strong>: Reconfigure</li></ul><ul id="18295b1a-aa71-802c-a5ee-cd5b4fde1475" class="bulleted-list"><li style="list-style-type:disc"><strong>Actors</strong>: Control System, Weather Station</li></ul><ul id="18295b1a-aa71-80d0-ba66-cf4a7df5d18a" class="bulleted-list"><li style="list-style-type:disc"><strong>Description</strong>: The control system sends new configuration settings to the weather station, such as changing the data collection frequency or enabling/disabling specific instruments.</li></ul><ul id="18295b1a-aa71-8024-9b81-d3bd00516fb6" class="bulleted-list"><li style="list-style-type:disc"><strong>Stimulus</strong>: The control system sends a reconfiguration command with new settings.</li></ul><ul id="18295b1a-aa71-80c6-bfcc-c09e45bb0593" class="bulleted-list"><li style="list-style-type:disc"><strong>Response</strong>: The weather station updates its configuration and sends an acknowledgment back to the control system.</li></ul><p id="18295b1a-aa71-80d1-beda-d95a7efdf02e" class=""><strong>Structured Notation</strong>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-80fb-9099-d729c9023674" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Use Case: Reconfigure
+Actors: Control System, Weather Station
+Description: The control system sends new configuration settings to the weather station.
+Stimulus: Control system sends a reconfiguration command.
+Response: Weather station updates its configuration and sends an acknowledgment.
+</code></pre><hr id="18295b1a-aa71-8041-9aa2-db5634f8a7c6"/><h3 id="18295b1a-aa71-8023-8a5f-c954aef4ba92" class=""><strong>Exercise 7.2: MHC-PMS Use Case Diagram</strong></h3><p id="18295b1a-aa71-8036-8efc-da2ff4988363" class="">Assume the <strong>MHC-PMS (Mental Health Care-Patient Management System)</strong> is being developed using an object-oriented approach. Draw a use case diagram showing at least six possible use cases.</p><h3 id="18295b1a-aa71-80b4-8e95-c23fad4fd11e" class=""><strong>Use Case Diagram</strong>:</h3><ul id="18295b1a-aa71-80a4-aebb-d2e6c01ce5c7" class="bulleted-list"><li style="list-style-type:disc"><strong>Actors</strong>: Patient, Doctor, Nurse, Admin</li></ul><ul id="18295b1a-aa71-80fd-b9ac-eee4565a23e4" class="bulleted-list"><li style="list-style-type:disc"><strong>Use Cases</strong>:<ol type="1" id="18295b1a-aa71-805e-a947-c8fe3804613a" class="numbered-list" start="1"><li><strong>Register Patient</strong>: Admin registers a new patient in the system.</li></ol><ol type="1" id="18295b1a-aa71-8041-9fb8-d3760a4458f8" class="numbered-list" start="2"><li><strong>Schedule Appointment</strong>: Patient or Doctor schedules an appointment.</li></ol><ol type="1" id="18295b1a-aa71-80ae-a61b-e734a4f9fa01" class="numbered-list" start="3"><li><strong>View Medical History</strong>: Doctor or Nurse views a patient’s medical history.</li></ol><ol type="1" id="18295b1a-aa71-8009-a8d0-d27270b6ea7f" class="numbered-list" start="4"><li><strong>Prescribe Medication</strong>: Doctor prescribes medication for a patient.</li></ol><ol type="1" id="18295b1a-aa71-8004-a4b3-e0810264fc21" class="numbered-list" start="5"><li><strong>Update Patient Record</strong>: Nurse updates a patient’s record after a visit.</li></ol><ol type="1" id="18295b1a-aa71-8096-b984-f71b98162b7f" class="numbered-list" start="6"><li><strong>Generate Report</strong>: Admin generates a report on patient statistics.</li></ol></li></ul><p id="18295b1a-aa71-808e-b277-db18813d6dad" class=""><strong>Use Case Diagram Description</strong>:</p><ul id="18295b1a-aa71-809c-8bce-ca6d3d73895d" class="bulleted-list"><li style="list-style-type:disc"><strong>Actors</strong> are connected to the use cases they initiate or participate in.</li></ul><ul id="18295b1a-aa71-8066-ab9d-e197c7350893" class="bulleted-list"><li style="list-style-type:disc">For example:<ul id="18295b1a-aa71-809a-af58-cd588556c87a" class="bulleted-list"><li style="list-style-type:circle"><strong>Patient</strong> is connected to <strong>Schedule Appointment</strong>.</li></ul><ul id="18295b1a-aa71-8007-9026-d297db530a93" class="bulleted-list"><li style="list-style-type:circle"><strong>Doctor</strong> is connected to <strong>View Medical History</strong>, <strong>Prescribe Medication</strong>, and <strong>Schedule Appointment</strong>.</li></ul><ul id="18295b1a-aa71-8053-837c-f228d443dab1" class="bulleted-list"><li style="list-style-type:circle"><strong>Nurse</strong> is connected to <strong>Update Patient Record</strong>.</li></ul><ul id="18295b1a-aa71-80a9-864e-f95aa446fe13" class="bulleted-list"><li style="list-style-type:circle"><strong>Admin</strong> is connected to <strong>Register Patient</strong> and <strong>Generate Report</strong>.</li></ul></li></ul><hr id="18295b1a-aa71-8063-8436-c91058d263bd"/><h3 id="18295b1a-aa71-806b-abca-ce648509473c" class=""><strong>Exercise 7.3: Object Class Design</strong></h3><p id="18295b1a-aa71-806b-b29a-df030151fde9" class="">Using UML notation, design the following object classes, identifying attributes and operations.</p><h3 id="18295b1a-aa71-8007-8d87-e5921a2e544d" class=""><strong>a. Telephone</strong></h3><ul id="18295b1a-aa71-8049-8ccc-f2aaf0c6b73a" class="bulleted-list"><li style="list-style-type:disc"><strong>Attributes</strong>:<ul id="18295b1a-aa71-808c-9d76-fda8320f385b" class="bulleted-list"><li style="list-style-type:circle"><code>phoneNumber: String</code></li></ul><ul id="18295b1a-aa71-801c-a528-c100d0c23bab" class="bulleted-list"><li style="list-style-type:circle"><code>contacts: List&lt;Contact&gt;</code></li></ul><ul id="18295b1a-aa71-80da-ab2d-f4ec03b68a3a" class="bulleted-list"><li style="list-style-type:circle"><code>callHistory: List&lt;Call&gt;</code></li></ul></li></ul><ul id="18295b1a-aa71-808c-9293-c8ef3c73a8f3" class="bulleted-list"><li style="list-style-type:disc"><strong>Operations</strong>:<ul id="18295b1a-aa71-804d-9935-dfa6447bfa0d" class="bulleted-list"><li style="list-style-type:circle"><code>makeCall(number: String)</code></li></ul><ul id="18295b1a-aa71-809f-8d94-c81ffb4e7b2c" class="bulleted-list"><li style="list-style-type:circle"><code>receiveCall()</code></li></ul><ul id="18295b1a-aa71-801a-b843-f014365c6c75" class="bulleted-list"><li style="list-style-type:circle"><code>addContact(name: String, number: String)</code></li></ul><ul id="18295b1a-aa71-80f7-bef2-fbb4679313f0" class="bulleted-list"><li style="list-style-type:circle"><code>viewCallHistory()</code></li></ul></li></ul><p id="18295b1a-aa71-806b-86c5-cc2d3bf5424a" class=""><strong>UML Class Diagram</strong>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-80b4-98ee-e3449dbc1bd7" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">+---------------------+
+|     Telephone       |
++---------------------+
+| - phoneNumber: String |
+| - contacts: List&lt;Contact&gt; |
+| - callHistory: List&lt;Call&gt; |
++---------------------+
+| + makeCall(number: String) |
+| + receiveCall() |
+| + addContact(name: String, number: String) |
+| + viewCallHistory() |
++---------------------+
+</code></pre><hr id="18295b1a-aa71-80e6-a68c-c4971880835f"/><h3 id="18295b1a-aa71-8080-beb0-d43220fdb897" class=""><strong>b. Printer for a Personal Computer</strong></h3><ul id="18295b1a-aa71-807d-9694-c58549a3a071" class="bulleted-list"><li style="list-style-type:disc"><strong>Attributes</strong>:<ul id="18295b1a-aa71-80ee-b3eb-cb2cc164ef23" class="bulleted-list"><li style="list-style-type:circle"><code>printerName: String</code></li></ul><ul id="18295b1a-aa71-8082-88b6-c96dc89e1481" class="bulleted-list"><li style="list-style-type:circle"><code>paperLevel: int</code></li></ul><ul id="18295b1a-aa71-80f4-9161-fe7356c49456" class="bulleted-list"><li style="list-style-type:circle"><code>inkLevel: int</code></li></ul></li></ul><ul id="18295b1a-aa71-80f3-acf8-ead60519e1d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Operations</strong>:<ul id="18295b1a-aa71-8055-b505-fa76bf83ff93" class="bulleted-list"><li style="list-style-type:circle"><code>printDocument(document: Document)</code></li></ul><ul id="18295b1a-aa71-8011-ab54-e906b3f7f909" class="bulleted-list"><li style="list-style-type:circle"><code>checkInkLevel()</code></li></ul><ul id="18295b1a-aa71-8075-b00f-f07ebc7e2691" class="bulleted-list"><li style="list-style-type:circle"><code>checkPaperLevel()</code></li></ul><ul id="18295b1a-aa71-8015-952d-facfdeb73a0c" class="bulleted-list"><li style="list-style-type:circle"><code>refillInk()</code></li></ul><ul id="18295b1a-aa71-80bf-8591-cc57689fda72" class="bulleted-list"><li style="list-style-type:circle"><code>refillPaper()</code></li></ul></li></ul><p id="18295b1a-aa71-80ae-bd04-e51b54ebcbe3" class=""><strong>UML Class Diagram</strong>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-8030-91ac-c6f76af26a44" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">+---------------------+
+|     Printer         |
++---------------------+
+| - printerName: String |
+| - paperLevel: int    |
+| - inkLevel: int      |
++---------------------+
+| + printDocument(document: Document) |
+| + checkInkLevel() |
+| + checkPaperLevel() |
+| + refillInk() |
+| + refillPaper() |
++---------------------+
+</code></pre><hr id="18295b1a-aa71-801f-ad85-e325a19bb8ad"/><h3 id="18295b1a-aa71-80a4-9886-caceb1ca97c3" class=""><strong>c. Personal Stereo System</strong></h3><ul id="18295b1a-aa71-8098-95b8-d3108176400c" class="bulleted-list"><li style="list-style-type:disc"><strong>Attributes</strong>:<ul id="18295b1a-aa71-80e7-9b6a-ca621085177e" class="bulleted-list"><li style="list-style-type:circle"><code>volumeLevel: int</code></li></ul><ul id="18295b1a-aa71-805b-9511-ea1eaceb243d" class="bulleted-list"><li style="list-style-type:circle"><code>currentTrack: String</code></li></ul><ul id="18295b1a-aa71-80df-b43e-f363fb3eecd7" class="bulleted-list"><li style="list-style-type:circle"><code>playlist: List&lt;String&gt;</code></li></ul></li></ul><ul id="18295b1a-aa71-802a-ba7a-cfaf06fcc822" class="bulleted-list"><li style="list-style-type:disc"><strong>Operations</strong>:<ul id="18295b1a-aa71-80b5-99f0-e8b26da1da9f" class="bulleted-list"><li style="list-style-type:circle"><code>play()</code></li></ul><ul id="18295b1a-aa71-80d1-81db-d43f32cdb343" class="bulleted-list"><li style="list-style-type:circle"><code>pause()</code></li></ul><ul id="18295b1a-aa71-80eb-9f12-d28104fbeb0f" class="bulleted-list"><li style="list-style-type:circle"><code>nextTrack()</code></li></ul><ul id="18295b1a-aa71-804a-83fa-e9a257dc71b5" class="bulleted-list"><li style="list-style-type:circle"><code>previousTrack()</code></li></ul><ul id="18295b1a-aa71-80fe-8e41-d81f42ea93f4" class="bulleted-list"><li style="list-style-type:circle"><code>adjustVolume(level: int)</code></li></ul></li></ul><p id="18295b1a-aa71-802a-894e-d405a66882b6" class=""><strong>UML Class Diagram</strong>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-8064-8c0b-ef305519fcf7" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">+---------------------+
+|  StereoSystem       |
++---------------------+
+| - volumeLevel: int  |
+| - currentTrack: String |
+| - playlist: List&lt;String&gt; |
++---------------------+
+| + play() |
+| + pause() |
+| + nextTrack() |
+| + previousTrack() |
+| + adjustVolume(level: int) |
++---------------------+
+</code></pre><hr id="18295b1a-aa71-80e3-b1ca-fb4ba504e40e"/><h3 id="18295b1a-aa71-8023-833d-c08374540b85" class=""><strong>d. Bank Account</strong></h3><ul id="18295b1a-aa71-80ae-8d91-fc16162a6f50" class="bulleted-list"><li style="list-style-type:disc"><strong>Attributes</strong>:<ul id="18295b1a-aa71-8094-bc45-f4924073bf36" class="bulleted-list"><li style="list-style-type:circle"><code>accountNumber: String</code></li></ul><ul id="18295b1a-aa71-8033-8951-f73fc2ab1384" class="bulleted-list"><li style="list-style-type:circle"><code>balance: double</code></li></ul><ul id="18295b1a-aa71-80ee-95f4-d75082c560dd" class="bulleted-list"><li style="list-style-type:circle"><code>accountHolder: String</code></li></ul></li></ul><ul id="18295b1a-aa71-805a-bd23-d8c9afd1703e" class="bulleted-list"><li style="list-style-type:disc"><strong>Operations</strong>:<ul id="18295b1a-aa71-80c4-b94f-ed20cb0765a4" class="bulleted-list"><li style="list-style-type:circle"><code>deposit(amount: double)</code></li></ul><ul id="18295b1a-aa71-809d-8e0c-e154601acba1" class="bulleted-list"><li style="list-style-type:circle"><code>withdraw(amount: double)</code></li></ul><ul id="18295b1a-aa71-808a-b088-ef548d6efca9" class="bulleted-list"><li style="list-style-type:circle"><code>checkBalance()</code></li></ul><ul id="18295b1a-aa71-8070-b799-f3b7d27325b2" class="bulleted-list"><li style="list-style-type:circle"><code>transfer(amount: double, targetAccount: BankAccount)</code></li></ul></li></ul><p id="18295b1a-aa71-80ea-bd60-e579fe6d7f39" class=""><strong>UML Class Diagram</strong>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-8015-8de0-f43a9f59c266" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">+---------------------+
+|    BankAccount      |
++---------------------+
+| - accountNumber: String |
+| - balance: double   |
+| - accountHolder: String |
++---------------------+
+| + deposit(amount: double) |
+| + withdraw(amount: double) |
+| + checkBalance() |
+| + transfer(amount: double, targetAccount: BankAccount) |
++---------------------+
+</code></pre><hr id="18295b1a-aa71-80b6-9bcc-d138990ef342"/><h3 id="18295b1a-aa71-8038-8bc9-ce229e4c1227" class=""><strong>e. Library Catalog</strong></h3><ul id="18295b1a-aa71-80e8-a51c-c803b315141b" class="bulleted-list"><li style="list-style-type:disc"><strong>Attributes</strong>:<ul id="18295b1a-aa71-8034-8c94-d438527513eb" class="bulleted-list"><li style="list-style-type:circle"><code>books: List&lt;Book&gt;</code></li></ul><ul id="18295b1a-aa71-80c8-884d-dfa84e18250e" class="bulleted-list"><li style="list-style-type:circle"><code>availableBooks: List&lt;Book&gt;</code></li></ul><ul id="18295b1a-aa71-8014-b185-d60126de0585" class="bulleted-list"><li style="list-style-type:circle"><code>borrowedBooks: List&lt;Book&gt;</code></li></ul></li></ul><ul id="18295b1a-aa71-8081-b6af-d7d294762eb1" class="bulleted-list"><li style="list-style-type:disc"><strong>Operations</strong>:<ul id="18295b1a-aa71-80c5-a614-feb0954f4915" class="bulleted-list"><li style="list-style-type:circle"><code>addBook(book: Book)</code></li></ul><ul id="18295b1a-aa71-80b2-94ec-f27d2ce03227" class="bulleted-list"><li style="list-style-type:circle"><code>removeBook(book: Book)</code></li></ul><ul id="18295b1a-aa71-80ed-977d-f8c4ae44f96d" class="bulleted-list"><li style="list-style-type:circle"><code>searchBook(title: String)</code></li></ul><ul id="18295b1a-aa71-8009-ad95-e8385d8b3dd6" class="bulleted-list"><li style="list-style-type:circle"><code>borrowBook(book: Book, borrower: String)</code></li></ul><ul id="18295b1a-aa71-8008-b559-ff7308be89ab" class="bulleted-list"><li style="list-style-type:circle"><code>returnBook(book: Book)</code></li></ul></li></ul><p id="18295b1a-aa71-8012-af6c-da3c9f6e1ee8" class=""><strong>UML Class Diagram</strong>:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-8052-9f9e-d99183a54957" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">+---------------------+
+|   LibraryCatalog    |
++---------------------+
+| - books: List&lt;Book&gt; |
+| - availableBooks: List&lt;Book&gt; |
+| - borrowedBooks: List&lt;Book&gt; |
++---------------------+
+| + addBook(book: Book) |
+| + removeBook(book: Book) |
+| + searchBook(title: String) |
+| + borrowBook(book: Book, borrower: String) |
+| + returnBook(book: Book) |
++---------------------+
+</code></pre><hr id="18295b1a-aa71-800c-8a79-d474a5f42e89"/><h3 id="18295b1a-aa71-80db-af72-d1fe3300578a" class=""></h3><h3 id="18295b1a-aa71-80d7-82bb-d16986710cdc" class=""><strong>7.4. Inheritance Hierarchy for Weather Station Objects</strong></h3><ul id="18295b1a-aa71-80a1-9047-fcf5bbd93448" class="bulleted-list"><li style="list-style-type:disc"><strong>Question</strong>: Using the weather station objects identified in Figure 7.6 as a starting point, identify further objects that may be used in this system. Design an inheritance hierarchy for the objects that you have identified.</li></ul><p id="18295b1a-aa71-80e2-87f2-dbfdecb73a96" class=""><strong>Answer</strong>:</p><ul id="18295b1a-aa71-8088-ae21-f5144de0a034" class="bulleted-list"><li style="list-style-type:disc"><strong>Further Objects</strong>:<ul id="18295b1a-aa71-80b2-a6ac-ed3b3e19e56a" class="bulleted-list"><li style="list-style-type:circle"><strong>Sensor</strong>: A superclass for all sensors (e.g., Thermometer, Anemometer, Barometer).</li></ul><ul id="18295b1a-aa71-80ea-a875-cad91aca138e" class="bulleted-list"><li style="list-style-type:circle"><strong>CommunicationModule</strong>: Handles communication with external systems (e.g., Satellite, Weather Information System).</li></ul><ul id="18295b1a-aa71-80a8-a1da-f4230104a5b1" class="bulleted-list"><li style="list-style-type:circle"><strong>PowerManager</strong>: Manages power-saving modes and battery levels.</li></ul><ul id="18295b1a-aa71-80c3-80c9-d43afa774772" class="bulleted-list"><li style="list-style-type:circle"><strong>DataProcessor</strong>: Processes raw data from sensors into summarized data.</li></ul></li></ul><ul id="18295b1a-aa71-80fa-ae97-e2e849e9d14a" class="bulleted-list"><li style="list-style-type:disc"><strong>Inheritance Hierarchy</strong>:<p id="18295b1a-aa71-807a-838c-f146c527bdb7" class="">Copy</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18295b1a-aa71-804b-b543-de1e9e4d64eb" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Sensor
+├── Thermometer
+├── Anemometer
+└── Barometer
+
+CommunicationModule
+├── SatelliteComms
+└── LocalComms
+
+PowerManager
+DataProcessor</code></pre></li></ul><hr id="18295b1a-aa71-80b1-a1ce-dbeb0d42e089"/><h3 id="18295b1a-aa71-80d4-a7a2-e876a745f051" class=""><strong>7.6. Object-Oriented Design for Systems</strong></h3><ul id="18295b1a-aa71-8025-a567-f79754731812" class="bulleted-list"><li style="list-style-type:disc"><strong>Question</strong>: Identify possible objects in the following systems and develop an object-oriented design for them. Make reasonable assumptions about the systems.</li></ul><p id="18295b1a-aa71-80cd-9f44-fc23b9cebadf" class=""><strong>Answer</strong>:</p><ol type="1" id="18295b1a-aa71-808c-864c-fa065bcf1130" class="numbered-list" start="1"><li><strong>Group Diary and Time Management System</strong>:<ul id="18295b1a-aa71-80a4-9282-ca40d9813ee2" class="bulleted-list"><li style="list-style-type:disc"><strong>Objects</strong>:<ul id="18295b1a-aa71-801e-9c2a-ed5e7c4194bd" class="bulleted-list"><li style="list-style-type:circle"><code>User</code>: Represents a co-worker with a personal diary.</li></ul><ul id="18295b1a-aa71-80db-b799-ceec32e82ed8" class="bulleted-list"><li style="list-style-type:circle"><code>Appointment</code>: Represents a meeting or appointment.</li></ul><ul id="18295b1a-aa71-800f-8fbb-fd59f40e5021" class="bulleted-list"><li style="list-style-type:circle"><code>Diary</code>: Manages appointments for a user.</li></ul><ul id="18295b1a-aa71-8038-9cf7-f67396545f26" class="bulleted-list"><li style="list-style-type:circle"><code>Scheduler</code>: Finds common slots and schedules appointments.</li></ul><ul id="18295b1a-aa71-803b-b9d6-d0cf8a6e45de" class="bulleted-list"><li style="list-style-type:circle"><code>Notification</code>: Sends reminders or updates to users.</li></ul></li></ul><ul id="18295b1a-aa71-8046-8cd7-fcc66db64506" class="bulleted-list"><li style="list-style-type:disc"><strong>Design</strong>:<ul id="18295b1a-aa71-8013-bd00-d7a781e20578" class="bulleted-list"><li style="list-style-type:circle">The <code>Scheduler</code> interacts with multiple <code>Diary</code> objects to find common slots.</li></ul><ul id="18295b1a-aa71-8093-85aa-fba4f7239494" class="bulleted-list"><li style="list-style-type:circle">If no slots are available, the <code>Scheduler</code> interacts with the <code>User</code> to rearrange their diary.</li></ul></li></ul></li></ol><ol type="1" id="18295b1a-aa71-8025-9073-c377b0e7342d" class="numbered-list" start="2"><li><strong>Automated Filling Station (Gas Station)</strong>:<ul id="18295b1a-aa71-80a2-ae1c-e0d4c2784b77" class="bulleted-list"><li style="list-style-type:disc"><strong>Objects</strong>:<ul id="18295b1a-aa71-8032-a28a-dee3ec3ea652" class="bulleted-list"><li style="list-style-type:circle"><code>Pump</code>: Represents a fuel pump.</li></ul><ul id="18295b1a-aa71-803d-8fb6-fc6736d96249" class="bulleted-list"><li style="list-style-type:circle"><code>CardReader</code>: Reads and verifies credit cards.</li></ul><ul id="18295b1a-aa71-80c5-a362-ddef16db3993" class="bulleted-list"><li style="list-style-type:circle"><code>CreditCompany</code>: Verifies the card and sets a fuel limit.</li></ul><ul id="18295b1a-aa71-80c2-bbd9-d91fa2249d9f" class="bulleted-list"><li style="list-style-type:circle"><code>FuelTank</code>: Manages fuel levels.</li></ul><ul id="18295b1a-aa71-808d-ba64-fc0d7666757c" class="bulleted-list"><li style="list-style-type:circle"><code>Transaction</code>: Records the fuel purchase and debits the card.</li></ul></li></ul><ul id="18295b1a-aa71-80c7-b943-ff8206198dd9" class="bulleted-list"><li style="list-style-type:disc"><strong>Design</strong>:<ul id="18295b1a-aa71-800c-b51d-dfe0c267c331" class="bulleted-list"><li style="list-style-type:circle">The <code>CardReader</code> communicates with the <code>CreditCompany</code> to verify the card.</li></ul><ul id="18295b1a-aa71-8050-ada2-fe488636daef" class="bulleted-list"><li style="list-style-type:circle">The <code>Pump</code> dispenses fuel and updates the <code>Transaction</code> object.</li></ul><ul id="18295b1a-aa71-80e3-b06c-f70546937c86" class="bulleted-list"><li style="list-style-type:circle">If the card is invalid, the <code>CardReader</code> returns it without dispensing fuel.</li></ul></li></ul></li></ol><hr id="18295b1a-aa71-800a-b2e8-d70eb98658c5"/><h3 id="18295b1a-aa71-801f-9945-de54f4b84e00" class=""><strong>7.9. Importance of Configuration Management</strong></h3><ul id="18295b1a-aa71-8033-acde-f6a5ef49f917" class="bulleted-list"><li style="list-style-type:disc"><strong>Question</strong>: Using examples, explain why configuration management is important when a team of people are developing a software product.</li></ul><p id="18295b1a-aa71-80f7-b72f-ef5a699f4167" class=""><strong>Answer</strong>:</p><ul id="18295b1a-aa71-80cc-b80b-da39347c2cca" class="bulleted-list"><li style="list-style-type:disc"><strong>Configuration Management (CM)</strong> is crucial for team-based software development because:<ol type="1" id="18295b1a-aa71-80cf-9de4-c90ac29177f3" class="numbered-list" start="1"><li><strong>Version Control</strong>: It keeps track of different versions of software components, ensuring that everyone is working on the latest version.<ul id="18295b1a-aa71-80c7-9896-cbf259480173" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: If two developers are working on the same file, CM tools like Git prevent conflicts by merging changes.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-800a-919d-ee7fe9a17155" class="numbered-list" start="2"><li><strong>Collaboration</strong>: It allows multiple developers to work on the same project without overwriting each other’s work.<ul id="18295b1a-aa71-808d-83b8-e8830c8fba44" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A team developing a mobile app can use CM to manage code, assets, and documentation.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80d8-821a-d07696f7bb82" class="numbered-list" start="3"><li><strong>Traceability</strong>: It provides a history of changes, making it easier to identify when and why a bug was introduced.<ul id="18295b1a-aa71-8039-b6ae-ea70c31774b4" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: If a bug is found, the team can trace it back to a specific change using CM tools.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-803e-918c-faeb022ee98e" class="numbered-list" start="4"><li><strong>Build Management</strong>: It automates the process of compiling and linking components to create a working system.<ul id="18295b1a-aa71-8040-a962-f4837505909a" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A CM system can automatically build and test the software whenever a new change is committed.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-804c-a3d1-fd0eea447774" class="numbered-list" start="5"><li><strong>Problem Tracking</strong>: It helps manage bug reports and ensures that issues are resolved systematically.<ul id="18295b1a-aa71-80ef-ac61-ea0d11b44ac2" class="bulleted-list"><li style="list-style-type:disc"><strong>Example</strong>: A CM system like Jira can track bugs and assign them to developers.</li></ul></li></ol></li></ul><hr id="18295b1a-aa71-8066-a4e7-c3f405dbcd61"/><h3 id="18295b1a-aa71-8071-a91f-cbb2deea27c0" class=""><strong>7.10. Open Source for Customized Software</strong></h3><ul id="18295b1a-aa71-80cd-94b3-dd45bb812273" class="bulleted-list"><li style="list-style-type:disc"><strong>Question</strong>: A small company has developed a specialized product that it configures for each customer. New customers usually have specific requirements, and they pay for these to be developed. The company has an opportunity to bid for a new contract, which would more than double its customer base. The new customer also wishes to have some involvement in the configuration of the system. Explain why, in these circumstances, it might be a good idea for the company to make the software open source.</li></ul><p id="18295b1a-aa71-8087-a2e9-f9aa22262c89" class=""><strong>Answer</strong>:</p><ul id="18295b1a-aa71-80a4-94e0-f101e39320a0" class="bulleted-list"><li style="list-style-type:disc"><strong>Reasons to Make the Software Open Source</strong>:<ol type="1" id="18295b1a-aa71-806c-9e16-c84e6ef54e1e" class="numbered-list" start="1"><li><strong>Customer Involvement</strong>: The new customer wants to be involved in the configuration. Open source allows them to customize the software to their needs without relying entirely on the company.</li></ol><ol type="1" id="18295b1a-aa71-80ec-8a59-c04a87251829" class="numbered-list" start="2"><li><strong>Community Contributions</strong>: Open source can attract a community of developers who can contribute to the software, reducing the development burden on the company.</li></ol><ol type="1" id="18295b1a-aa71-80a3-9ed4-e849dae285f8" class="numbered-list" start="3"><li><strong>Faster Development</strong>: With more contributors, new features and configurations can be developed faster, helping the company meet the demands of a larger customer base.</li></ol><ol type="1" id="18295b1a-aa71-8068-baba-c7a465617731" class="numbered-list" start="4"><li><strong>Cost Savings</strong>: The company can save on development costs by leveraging community contributions.</li></ol><ol type="1" id="18295b1a-aa71-80c4-ac0e-e20cf81bee91" class="numbered-list" start="5"><li><strong>Transparency</strong>: Open source builds trust with customers, as they can see and verify the code.</li></ol><ol type="1" id="18295b1a-aa71-8027-9545-d72454dd052d" class="numbered-list" start="6"><li><strong>Market Expansion</strong>: Open source can increase the software’s visibility and attract more customers.</li></ol></li></ul><hr id="18295b1a-aa71-806c-b75c-c7c23820c7fb"/><h3 id="18295b1a-aa71-80b4-ab2b-dc7830dc307d" class=""><strong>Questions Involving Diagrams</strong></h3><p id="18295b1a-aa71-80d1-819d-ea722e5c7270" class="">These questions require creating diagrams, so I’ll list them without detailed answers:</p><ol type="1" id="18295b1a-aa71-8063-8ef4-c301ce976ec9" class="numbered-list" start="1"><li><strong>7.5. Sequence Diagram for Weather Station</strong>:<ul id="18295b1a-aa71-8075-b574-ea022ad12359" class="bulleted-list"><li style="list-style-type:disc">Develop a sequence diagram to show the interaction between the data collection subsystem and the instruments that collect weather data.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-8085-b501-c20f03a86c26" class="numbered-list" start="2"><li><strong>7.7. Sequence Diagram for Group Diary System</strong>:<ul id="18295b1a-aa71-80d1-a4f0-fd368f5684ab" class="bulleted-list"><li style="list-style-type:disc">Draw a sequence diagram showing the interactions of objects in a group diary system when a group of people are arranging a meeting.</li></ul></li></ol><ol type="1" id="18295b1a-aa71-80c3-a785-f48f4bbeb2cb" class="numbered-list" start="3"><li><strong>7.8. UML State Diagram</strong>:<ul id="18295b1a-aa71-8055-b449-dbac4af032f6" class="bulleted-list"><li style="list-style-type:disc">Draw a UML state diagram showing the possible state changes in either the group diary or the filling station system.</li></ul></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
